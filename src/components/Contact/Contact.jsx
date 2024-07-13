@@ -1,9 +1,15 @@
 import css from "./Contact.module.css";
 import { FaPhoneAlt, FaUser } from "react-icons/fa";
+import { nanoid } from "nanoid";
 
-function Contact({ data }) {
+function Contact({ data, onDel }) {
+  const curId = nanoid();
+  if (!data.id) {
+    data.id = curId;
+  }
+
   return (
-    <div className={css.wrap}>
+    <li className={css.wrap} key={data.id}>
       <div className={css.box}>
         <div className={css.item}>
           <FaUser className={css.person} />
@@ -14,10 +20,15 @@ function Contact({ data }) {
           <p>{data.number}</p>
         </div>
       </div>
-      <button className={css.btn} type="button">
+      <button
+        id={data.id}
+        className={css.btn}
+        type="button"
+        onClick={(e) => onDel(e.target.id)}
+      >
         Delete
       </button>
-    </div>
+    </li>
   );
 }
 
