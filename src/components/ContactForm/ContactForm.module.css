@@ -1,34 +1,48 @@
+.formWrapper {
+  /* min-height: 50vh; */
+  /* display: flex;
+  flex-direction: column;
+  align-items: center; */
+}
 .form {
+  width: 40vw;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 20px;
   padding: 10px;
-  border: 2px solid black;
   border-radius: 10px;
   font-size: inherit;
-  max-width: 420px;
+  box-shadow: 0 0 8px 8px lightgray;
+  & button {
+    font-size: inherit;
+    border-radius: 5px;
+    padding: 10px 15px;
+    border: none;
+    transition: 500ms ease;
+    &:hover {
+      background-color: lightgray;
+    }
+  }
 }
 .label {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  width: 100%;
+  gap: 5px;
+  & span {
+    font-weight: bold;
+  }
 }
 .input {
+  width: 100%;
   border-radius: 10px;
   padding: 5px 5px;
-  width: 100%;
   font-size: inherit;
 }
 
-.btn {
-  font-size: inherit;
-  border-radius: 5px;
-  padding: 10px 15px;
-  border: none;
-  transition: 500ms ease;
-  &:hover {
-    background-color: lightgray;
-  }
+.error {
+  color: red;
+  font-weight: 500;
 }
