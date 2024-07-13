@@ -1,14 +1,18 @@
 import { useState } from "react";
+import initialContacts from "../../assets/contacts.json";
 import "./App.css";
+import ContactForm from "./../ContactForm/ContactForm";
+import SearchBox from "./../SearchBox/SearchBox";
+import ContactList from "./../ContactList/ContactList";
 
 function App() {
-  const [count, setCount] = useState(0);
-
+  const [contacts, setContacts] = useState(initialContacts);
   return (
     <>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <h1>Phone book</h1>
+      <ContactForm />
+      <SearchBox />
+      <ContactList contacts={initialContacts} />
     </>
   );
 }
