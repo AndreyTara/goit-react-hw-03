@@ -1,0 +1,30 @@
+.wrap {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border: 2px solid black;
+  border-radius: 10px;
+  gap: 10px;
+}
+.box {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.btn {
+  font-size: inherit;
+  border-radius: 5px;
+  padding: 10px 15px;
+  border: none;
+  transition: 500ms ease;
+  &:hover {
+    background-color: lightgray;
+  }
+}
