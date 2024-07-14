@@ -1,13 +1,7 @@
 import css from "./Contact.module.css";
 import { FaPhoneAlt, FaUser } from "react-icons/fa";
-import { nanoid } from "nanoid";
 
 function Contact({ data, onDel }) {
-  const curId = nanoid();
-  if (!data.id) {
-    data.id = curId;
-  }
-
   return (
     <li className={css.wrap} key={data.id}>
       <div className={css.box}>

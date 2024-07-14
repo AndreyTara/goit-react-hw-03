@@ -4,6 +4,7 @@ import "./App.css";
 import ContactForm from "./../ContactForm/ContactForm";
 import SearchBox from "./../SearchBox/SearchBox";
 import ContactList from "./../ContactList/ContactList";
+import { nanoid } from "nanoid";
 
 function App() {
   const [contacts, setContacts] = useState(() => {
@@ -26,6 +27,11 @@ function App() {
   const [filter, setFilter] = useState("");
 
   const addContact = (newContact) => {
+    //  const curId = nanoid();
+    // if (!data.id) {
+    //   data.id = curId;
+    // }
+    newContact = { ...newContact, id: nanoid() };
     setContacts((prefContacts) => {
       return [...prefContacts, newContact];
     });
