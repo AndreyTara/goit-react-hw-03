@@ -6,8 +6,8 @@ function ContactForm({ onAdd }) {
   const registerSchema = Yup.object({
     name: Yup.string()
       .required("This field is required!")
-      .min(3, "Name   3 chars")
-      .max(20, "Name is max 20 chars"),
+      .min(3, "Name consist from min 3 chars")
+      .max(50, "Name consist from max 20 chars"),
     number: Yup.string()
       .required("This field is required!")
       .matches(
@@ -20,7 +20,6 @@ function ContactForm({ onAdd }) {
     number: "",
   };
   const handleSubmit = (data, actions) => {
-    console.log(data);
     onAdd(data);
     actions.resetForm();
   };
